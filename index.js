@@ -25,7 +25,7 @@ const uerschema=new mongoose.Schema(
 )
 const User=mongoose.model("user",uerschema)
 module.exports=User
-mongoose.connect(process.env.MONGODB_URL).then(()=>console.log("mongoose connected"))
+mongoose.connect(process.env.MONGODB_URL|| process.env.MONGODB_URL_LOCAL ).then(()=>console.log("mongoose connected"))
 app.get('/',(req,res)=>
 {
      res.send('hello')
